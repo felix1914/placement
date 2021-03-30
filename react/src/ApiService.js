@@ -1060,7 +1060,7 @@ import axios from 'axios'
 
 export async function register(newUser) {
     const token = localStorage.getItem('usertoken')
-    const response = await fetch('http://localhost:3200/api/createUSer', {
+    const response = await fetch('https://training-placement.herokuapp.com/api/createUSer', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
@@ -1113,7 +1113,7 @@ export async function register(newUser) {
 // }
 export const login = user => {
     return axios
-        .post('http://localhost:3200/api/login', {
+        .post('https://training-placement.herokuapp.com/api/login', {
             email: user.email,
             password: user.password
         })
@@ -1130,7 +1130,7 @@ export const login = user => {
 export const getAllusers = () => {
     const token = localStorage.getItem('usertoken');
     return axios
-        .get('http://localhost:3200/api/getAlluser', {
+        .get('https://training-placement.herokuapp.com/api/getAlluser', {
             headers: { Authorization: token }
         })
         .then(response => {
@@ -1144,7 +1144,7 @@ export const getAllusers = () => {
 export const getUser = () => {
     const token = localStorage.getItem('usertoken');
     return axios
-        .get('http://localhost:3200/api/getUser', {
+        .get('https://training-placement.herokuapp.com/api/getUser', {
             headers: { Authorization: token }
         })
         .then(response => {
@@ -1194,7 +1194,7 @@ export const update = updateData => {
         export const getStudentsUpdate = () => {
         const token = localStorage.getItem('usertoken');
         return axios
-            .get('http://localhost:3200/api/dailyUpdates/getAll', {
+            .get('https://training-placement.herokuapp.com/api/dailyUpdates/getAll', {
                 headers: { Authorization: token }
             })
             .then(response => {
